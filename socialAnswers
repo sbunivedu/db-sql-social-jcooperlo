@@ -1,0 +1,19 @@
+#1
+SELECT hs1.name
+FROM Highschooler hs1, Highschooler hs2, Friend
+WHERE hs2.name = 'Gabriel' AND hs2.ID = Friend.ID2 and Friend.ID1 = hs1.ID;
+
+#2
+SELECT name, grade 
+FROM Highschooler 
+WHERE ID NOT IN(SELECT ID FROM Highschooler, Likes WHERE Highschooler.ID = Likes.ID1 OR Highschooler.ID = Likes.ID2);
+
+#3
+SELECT
+FROM
+WHERE
+
+#4
+SELECT hs1.name, hs1.grade, hs2.name, hs2.grade
+FROM Highschooler hs1, Highschooler hs2, Likes
+WHERE hs1.ID = Likes.ID1 AND hs2.ID - Likes.ID2 AND (hs1.grade - hs2.grade) >= 2;
